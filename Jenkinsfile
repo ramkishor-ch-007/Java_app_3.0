@@ -69,8 +69,6 @@ pipeline{
             steps{
                script{
                   sh"""
-                     mvn clean install -DskipTests
-                     cd Java_app_3.0/target
                      curl -X PUT -u admin -T kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar http://13.60.29.206/:8082/artifactory/example-repo-local/
                    """
                }
